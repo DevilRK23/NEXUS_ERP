@@ -1,0 +1,13 @@
+{
+  "name": "nexus-enterprise-erp",
+  "version": "2026.1.0-LTS",
+  "description": "NEXUS Enterprise ERP Distributed Platform",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build successful'",
+    "start": "npx -y serve . -l 8080"
+  },
+  "keywords": ["enterprise-erp", "microservices", "temporal", "postgresql", "kafka"],
+  "author": "DevilRK23",
+  "license": "UNLICENSED"
+}
