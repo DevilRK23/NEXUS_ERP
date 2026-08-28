@@ -1,0 +1,161 @@
+/* ==========================================================================
+   NEXUS ENTERPRISE ERP — RESPONSIVE DESIGN (360px to 4K)
+   ========================================================================== */
+
+/* Large Screens (1440px and up) */
+@media (min-width: 1440px) {
+  :root {
+    --container-max-width: 1400px;
+  }
+}
+
+/* Laptops & Tablets Navigation Breakpoint (1180px and down) */
+@media (max-width: 1180px) {
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-medium);
+    flex-direction: column;
+    padding: 24px 32px;
+    gap: 18px;
+    transform: translateY(-160%);
+    transition: transform var(--transition-normal);
+    z-index: 999;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-menu.mobile-open {
+    transform: translateY(0);
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Tablet & Smaller Desktops (1024px and down) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .module-nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .saga-flow-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet & Mobile (768px and down) */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-medium);
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    transform: translateY(-150%);
+    transition: transform var(--transition-normal);
+    z-index: 999;
+  }
+
+  .nav-menu.mobile-open {
+    transform: translateY(0);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .c4-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .inspector-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kanban-board {
+    grid-template-columns: 1fr;
+  }
+
+  .match-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gl-input-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .saga-flow-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small Mobile (480px and down) */
+@media (max-width: 480px) {
+  .hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .c4-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .modal-dialog {
+    padding: 16px;
+  }
+}

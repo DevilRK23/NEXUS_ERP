@@ -1,0 +1,12 @@
+{
+  "name": "nexus-enterprise-erp-backend",
+  "version": "2026.1.0-LTS",
+  "description": "NEXUS Enterprise ERP Decoupled Microservices Backend Suite & API Gateway",
+  "main": "gateway/server.js",
+  "scripts": {
+    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File start_backend.ps1 -Port 3000",
+    "test": "powershell -NoProfile -ExecutionPolicy Bypass -File tests/run_full_audit.ps1"
+  },
+  "author": "NEXUS Core Engineering",
+  "license": "UNLICENSED"
+}

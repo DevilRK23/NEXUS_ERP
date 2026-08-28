@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS Enterprise ERP — The Intelligent Multi-Tenant Distributed Platform</title>
+  <meta name="description" content="Next-Generation Multi-Tenant Enterprise ERP Platform. Right-sized DDD microservices, PostgreSQL Row-Level Security, Kafka event backbone, Temporal durable sagas, and isolated AI Tier.">
+  <meta name="keywords" content="Enterprise ERP, Microservices, Temporal Sagas, PostgreSQL RLS, Kafka Event Backbone, General Ledger, Multi-Tenancy, NetSuite Alternative, Unit4 Alternative">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modules-showcase.css">
+  <link rel="stylesheet" href="css/architecture-viz.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Effects & Cybernetic Particle Canvas -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+  <canvas id="particle-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
+
+  <!-- Sticky Site Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <span>NEXUS<span style="color: var(--accent-cyan);">.ERP</span></span>
+      </a>
+
+      <!-- Navigation Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#solutions" class="nav-link">Solutions</a></li>
+        <li><a href="#modules" class="nav-link">Modules</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#saga-simulator" class="nav-link">Sagas</a></li>
+        <li><a href="#ai-tier" class="nav-link">AI Copilot</a></li>
+        <li><a href="#comparison" class="nav-link">Compare</a></li>
+        <li><a href="#roi-calculator" class="nav-link">ROI</a></li>
+      </ul>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <button class="cmd-palette-btn" title="Global Quick Search (Ctrl+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search</span>
+          <span class="cmd-badge">⌘K</span>
+        </button>
+
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme">
+          <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"></svg>
+        </button>
+
+        <!-- Sign In Button -->
+        <button class="btn btn-secondary btn-sm auth-signin-btn" id="header-signin-btn">
+          <span>Sign In</span>
+        </button>
+
+        <!-- Sign Up Button -->
+        <button class="btn btn-primary btn-sm auth-signup-btn" id="header-signup-btn">
+          <span>Start Free Trial</span>
+        </button>
+
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Grand Spacious Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grand-header">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Enterprise Architecture Blueprint Level 0 • Distributed DDD & Event Mesh</span>
+        </div>
+
+        <h1 class="hero-title">
+          The Intelligent ERP Platform Engineered for <span class="gradient-text">Uncompromising Scale</span>
+        </h1>
+
+        <p class="hero-description">
+          A next-generation distributed enterprise ERP built on a single source of financial truth, 16 domain-driven microservices, sub-second inventory availability, and resilient Temporal sagas.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary btn-lg auth-signup-btn">
+            <span>Start Free 14-Day Sandbox</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+          <button class="btn btn-secondary btn-lg auth-signin-btn">
+            <span>Sign In to Cockpit</span>
+          </button>
+          <a href="#modules" class="btn btn-secondary btn-lg">
+            <span>Explore Sandboxes</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Spacious Hero Metrics Glass Bar -->
+      <div class="hero-metrics-bar">
+        <div class="metric-item">
+          <div class="metric-value" data-target-value="99.95" data-suffix="%" data-decimals="2">0%</div>
+          <div class="metric-label">GL Posting SLA</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value" data-target-value="300" data-prefix="<" data-suffix="ms">0ms</div>
+          <div class="metric-label">Stock Availability Engine</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value" data-target-value="0" data-suffix=" Leak">0</div>
+          <div class="metric-label">Kernel-Forced RLS</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value" data-target-value="16" data-suffix=" Services">0</div>
+          <div class="metric-label">DDD Bounded Contexts</div>
+        </div>
+      </div>
+
+      <!-- Wide Interactive Cockpit Preview -->
+      <div class="hero-cockpit-wide">
+        <div class="cockpit-frame">
+          <img src="assets/images/hero-dashboard.jpg" alt="NEXUS Enterprise ERP Live Cockpit" class="cockpit-media">
+          <div class="cockpit-overlay">
+            <div class="cockpit-header">
+              <div class="cockpit-pills">
+                <button class="cockpit-pill-btn active" data-feed="gl">General Ledger</button>
+                <button class="cockpit-pill-btn" data-feed="inventory">Inventory</button>
+                <button class="cockpit-pill-btn" data-feed="saga">Temporal Saga</button>
+                <button class="cockpit-pill-btn" data-feed="ai">AI Auditor</button>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="telemetry-waveform" title="Live Cluster IO Activity">
+                  <div class="telemetry-bar"></div>
+                  <div class="telemetry-bar"></div>
+                  <div class="telemetry-bar"></div>
+                  <div class="telemetry-bar"></div>
+                  <div class="telemetry-bar"></div>
+                </div>
+                <span class="badge badge-success font-mono" style="padding: 6px 14px; display: inline-flex; align-items: center; gap: 8px;">
+                  <span class="radar-live-beacon"><span class="beacon-core"></span><span class="beacon-wave"></span></span>
+                  <span>LIVE CLUSTER: AP-SOUTH-1</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="cockpit-live-feed">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px;">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">Real-Time Transaction Stream</span>
+                <span style="font-size: 0.8rem; color: var(--accent-cyan); font-family: var(--font-mono);">Kafka MSK v3.7 • Outbox Polling Relay</span>
+              </div>
+              <div id="cockpit-feed-content" style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="feed-row">
+                  <div>
+                    <span class="feed-entity">JOURNAL #JE-2026-0041</span>
+                    <div style="font-size: 0.82rem; color: var(--text-muted);">Dr Accounts Receivable $125,000 / Cr Sales Revenue $125,000</div>
+                  </div>
+                  <span class="badge badge-success">POSTED (GAPLESS)</span>
+                </div>
+                <div class="feed-row">
+                  <div>
+                    <span class="feed-entity">TRIAL BALANCE RECON</span>
+                    <div style="font-size: 0.82rem; color: var(--text-muted);">All 842 accounts balanced across USD & EUR currencies</div>
+                  </div>
+                  <span class="badge badge-info">BALANCED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions by Executive Persona (NetSuite / Unit4 Signature Pattern) -->
+  <section id="solutions" class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Role-Tailored Solutions</span>
+        <h2>Engineered for Every <span class="gradient-text">Enterprise Stakeholder</span></h2>
+        <p class="section-subtitle">
+          Select your leadership role below to see how NEXUS delivers continuous accounting, sub-second availability, and zero-monolith architecture.
+        </p>
+      </div>
+
+      <!-- Persona Switcher Buttons -->
+      <div class="persona-switcher">
+        <button class="persona-btn active" data-persona="cfo">
+          <span>💼 CFO & Financial Controllers</span>
+        </button>
+        <button class="persona-btn" data-persona="ops">
+          <span>🏭 Supply Chain & Warehouse Ops</span>
+        </button>
+        <button class="persona-btn" data-persona="cto">
+          <span>💻 CTO & Chief Software Architects</span>
+        </button>
+        <button class="persona-btn" data-persona="hr">
+          <span>👥 HR Directors & Payroll Officers</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Persona Content Display -->
+      <div class="persona-card-display" id="persona-content-display">
+        <!-- Injected dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 9-Module Business Suite Section (Expansive Horizontal Layout) -->
+  <section id="modules">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FM-01 to FM-09 Functional Scope</span>
+        <h2>Unified Business Suite — <span class="gradient-text">Try Live Sandboxes</span></h2>
+        <p class="section-subtitle">
+          Test the interactive functional prototypes below. Every module strictly conforms to its domain boundaries, immutable accounting rules, and event contracts.
+        </p>
+      </div>
+
+      <div class="modules-showcase-container">
+        <!-- Horizontal Segmented Module Navigation Bar -->
+        <div class="module-horizontal-nav">
+          <button class="module-nav-item active" data-module="accounting">
+            <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            <span>FM-03 Accounting & GL</span>
+          </button>
+          <button class="module-nav-item" data-module="inventory">
+            <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            <span>FM-04 Inventory & Valuation</span>
+          </button>
+          <button class="module-nav-item" data-module="purchasing">
+            <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            <span>FM-05 Purchasing & 3-Way Match</span>
+          </button>
+          <button class="module-nav-item" data-module="sales">
+            <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>FM-06/07 CRM & Sales O2C</span>
+          </button>
+          <button class="module-nav-item" data-module="payroll">
+            <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <span>FM-08/09 HR & Global Payroll</span>
+          </button>
+          <button class="module-nav-item" data-module="tenancy">
+            <svg class="module-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>FM-01 Multi-Tenancy & RLS</span>
+          </button>
+        </div>
+
+        <!-- Full-Width Sandbox Canvases -->
+        <div class="module-content-area">
+
+          <!-- 1. Accounting Panel -->
+          <div class="module-panel active" id="module-accounting">
+            <div class="sandbox-card">
+              <div class="sandbox-header">
+                <div class="sandbox-title-wrap">
+                  <h3 style="font-size: 1.6rem;">FM-03 General Ledger — Double-Entry Journal Builder</h3>
+                  <p style="color: var(--text-muted); font-size: 1.05rem;">Interactive verification of BR-03.01 (debits must equal credits) and gapless sequence allocation.</p>
+                </div>
+                <span class="sandbox-badge">APPEND-ONLY LEDGER</span>
+              </div>
+
+              <div class="gl-grid">
+                <div class="gl-toolbar">
+                  <div style="font-size: 0.95rem; color: var(--text-muted);">
+                    Company: <strong style="color: var(--text-main);">Acme Global Inc. (USD)</strong> • Period: <strong style="color: var(--accent-cyan);">FY2026-08 (OPEN)</strong>
+                  </div>
+                  <div class="badge badge-info font-mono" style="padding: 6px 14px;">NEXT GAPLESS SEQ: JE-2026-000143</div>
+                </div>
+
+                <!-- Input Rows -->
+                <div class="gl-input-row">
+                  <div>
+                    <label class="form-label">Account Code & Name</label>
+                    <input type="text" class="form-input" value="1110 - Operating Bank Account" readonly>
+                  </div>
+                  <div>
+                    <label class="form-label">Debit ($)</label>
+                    <input type="number" class="form-input gl-debit-input" value="50000" step="100">
+                  </div>
+                  <div>
+                    <label class="form-label">Credit ($)</label>
+                    <input type="number" class="form-input gl-credit-input" value="0" step="100">
+                  </div>
+                  <div>
+                    <label class="form-label">Dimension</label>
+                    <input type="text" class="form-input" value="HQ-TREASURY" readonly>
+                  </div>
+                </div>
+
+                <div class="gl-input-row">
+                  <div>
+                    <label class="form-label">Account Code & Name</label>
+                    <input type="text" class="form-input" value="4010 - Enterprise Software Revenue" readonly>
+                  </div>
+                  <div>
+                    <label class="form-label">Debit ($)</label>
+                    <input type="number" class="form-input gl-debit-input" value="0" step="100">
+                  </div>
+                  <div>
+                    <label class="form-label">Credit ($)</label>
+                    <input type="number" class="form-input gl-credit-input" value="50000" step="100">
+                  </div>
+                  <div>
+                    <label class="form-label">Dimension</label>
+                    <input type="text" class="form-input" value="SALES-US" readonly>
+                  </div>
+                </div>
+
+                <!-- Summary Bar -->
+                <div class="gl-summary-bar">
+                  <div style="display: flex; gap: 32px; font-size: 1.05rem;">
+                    <div>Total Debit: <strong id="gl-total-debit" class="font-mono" style="color: var(--accent-cyan);">$50,000.00</strong></div>
+                    <div>Total Credit: <strong id="gl-total-credit" class="font-mono" style="color: var(--accent-indigo);">$50,000.00</strong></div>
+                  </div>
+                  <div id="gl-balance-status" class="balance-status balanced">
+                    <span class="badge badge-success" style="padding: 8px 16px;">✓ BALANCED (Diff: $0.00)</span>
+                  </div>
+                  <button id="gl-post-btn" class="btn btn-primary">Post to Immutable Ledger</button>
+                </div>
+
+                <!-- Historical Append-Only Ledger -->
+                <div class="data-table-wrapper" style="margin-top: 16px;">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Entry Number</th>
+                        <th>Posting Date</th>
+                        <th>Description</th>
+                        <th>Debit Total</th>
+                        <th>Credit Total</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="gl-ledger-table-body">
+                      <tr>
+                        <td class="font-mono" style="color: var(--accent-cyan); font-weight: 700;">JE-2026-000142</td>
+                        <td>2026-08-28</td>
+                        <td>Customer Settlement Inv #INV-902</td>
+                        <td class="font-mono">$12,450.00</td>
+                        <td class="font-mono">$12,450.00</td>
+                        <td><span class="badge badge-success">POSTED (IMMUTABLE)</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Inventory Panel -->
+          <div class="module-panel" id="module-inventory">
+            <div class="sandbox-card">
+              <div class="sandbox-header">
+                <div class="sandbox-title-wrap">
+                  <h3 style="font-size: 1.6rem;">FM-04 Inventory & Multi-Warehouse Stock Engine</h3>
+                  <p style="color: var(--text-muted); font-size: 1.05rem;">Sub-300ms Availability Check: <code>Available = On-Hand − Reserved + Incoming</code></p>
+                </div>
+                <span class="sandbox-badge">FIFO VALUATION</span>
+              </div>
+
+              <div class="stock-matrix-grid">
+                <div class="stock-card">
+                  <div class="stock-card-header">
+                    <span>Central Hub Warehouse</span>
+                    <span class="badge badge-success">IN-STOCK</span>
+                  </div>
+                  <div class="range-slider-group">
+                    <label class="form-label">On-Hand Quantity</label>
+                    <input type="number" id="inv-onhand-input" class="form-input font-mono" value="12000">
+                  </div>
+                  <div class="range-slider-group">
+                    <label class="form-label">Reserved (Active Orders)</label>
+                    <input type="number" id="inv-reserved-input" class="form-input font-mono" value="3500">
+                  </div>
+                  <div class="stock-breakdown">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <span style="color: var(--text-muted);">Net Available:</span>
+                      <strong id="inv-available-result" class="font-mono" style="color: var(--accent-cyan); font-size: 1.35rem;">8,500 Units</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stock-card">
+                  <div class="stock-card-header">
+                    <span>FIFO Valuation Layers (SKU-990)</span>
+                    <span class="badge badge-info">FIFO APPLIED</span>
+                  </div>
+                  <div style="font-size: 0.9rem; display: flex; flex-direction: column; gap: 8px;">
+                    <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                      <strong>Layer 1 (Oldest):</strong> 4,000 Units @ $12.50/unit
+                    </div>
+                    <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                      <strong>Layer 2:</strong> 5,000 Units @ $13.10/unit
+                    </div>
+                    <div style="background: var(--bg-card); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                      <strong>Layer 3 (Newest):</strong> 3,000 Units @ $13.40/unit
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Purchasing & 3-Way Match Panel -->
+          <div class="module-panel" id="module-purchasing">
+            <div class="sandbox-card">
+              <div class="sandbox-header">
+                <div class="sandbox-title-wrap">
+                  <h3 style="font-size: 1.6rem;">FM-05 Purchasing — Automated 3-Way Match Engine</h3>
+                  <p style="color: var(--text-muted); font-size: 1.05rem;">Tolerance-evaluated matching across Purchase Order, Goods Receipt (GRN), and Vendor Bill.</p>
+                </div>
+                <span class="sandbox-badge">TOUCHLESS AP</span>
+              </div>
+
+              <div class="match-comparison-grid">
+                <div class="match-doc-card">
+                  <div class="match-doc-title">1. Approved PO (#PO-8821)</div>
+                  <div style="font-size: 0.92rem; color: var(--text-muted);">Ordered: 100 Units</div>
+                  <div style="font-size: 0.92rem; color: var(--text-muted);">Unit Price: $120.00</div>
+                  <div class="font-mono" style="color: var(--text-main); font-weight: 700; font-size: 1.1rem; margin-top: 4px;">Total: $12,000.00</div>
+                </div>
+
+                <div class="match-doc-card">
+                  <div class="match-doc-title">2. Goods Receipt (#GRN-441)</div>
+                  <div style="font-size: 0.92rem; color: var(--text-muted);">Received: 100 Units</div>
+                  <div style="font-size: 0.92rem; color: var(--text-muted);">Condition: Verified Clean</div>
+                  <div class="font-mono" style="color: var(--text-main); font-weight: 700; font-size: 1.1rem; margin-top: 4px;">GRNI Posted</div>
+                </div>
+
+                <div class="match-doc-card">
+                  <div class="match-doc-title">3. Vendor Bill (Interactive)</div>
+                  <div class="form-group" style="margin-bottom: 8px;">
+                    <label class="form-label" style="font-size: 0.8rem;">Billed Unit Price ($)</label>
+                    <input type="number" id="match-bill-price" class="form-input font-mono" value="121.50" step="0.5">
+                  </div>
+                  <div class="form-group" style="margin-bottom: 8px;">
+                    <label class="form-label" style="font-size: 0.8rem;">Billed Quantity</label>
+                    <input type="number" id="match-bill-qty" class="form-input font-mono" value="100">
+                  </div>
+                </div>
+              </div>
+
+              <div class="range-slider-group">
+                <div class="range-slider-header">
+                  <span class="range-slider-label">Company Price Variance Tolerance:</span>
+                  <span id="match-tolerance-val" class="range-slider-value">2.0%</span>
+                </div>
+                <input type="range" id="match-tolerance-slider" class="range-slider" min="0" max="10" step="0.5" value="2.0">
+              </div>
+
+              <div id="match-outcome-box" class="match-status-result badge-success">
+                ✓ AUTO-MATCHED & APPROVED FOR PAYMENT (Posting Dr GRNI / Cr AP)
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. CRM & Sales Panel -->
+          <div class="module-panel" id="module-sales">
+            <div class="sandbox-card">
+              <div class="sandbox-header">
+                <div class="sandbox-title-wrap">
+                  <h3 style="font-size: 1.6rem;">FM-06 & FM-07 CRM Opportunity Pipeline & Sales Order-to-Cash</h3>
+                  <p style="color: var(--text-muted); font-size: 1.05rem;">Drag opportunities across stages to trigger automated credit exposure evaluation and stock reservations.</p>
+                </div>
+                <span class="sandbox-badge">INTERACTIVE KANBAN</span>
+              </div>
+
+              <div class="kanban-board">
+                <div class="kanban-col" id="kanban-col-lead">
+                  <div class="kanban-col-header">
+                    <span>1. Qualified Lead</span>
+                    <span class="badge badge-info">2</span>
+                  </div>
+                  <div class="kanban-card" id="card-1" draggable="true" data-value="45000">
+                    <div style="font-weight: 700; font-size: 0.9rem;">Global Logistics Corp</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">$45,000 • 30% Prob</div>
+                  </div>
+                </div>
+
+                <div class="kanban-col" id="kanban-col-quote">
+                  <div class="kanban-col-header">
+                    <span>2. Quotation Sent</span>
+                    <span class="badge badge-info">1</span>
+                  </div>
+                  <div class="kanban-card" id="card-2" draggable="true" data-value="120000">
+                    <div style="font-weight: 700; font-size: 0.9rem;">Apex Retail Network</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">$120,000 • 60% Prob</div>
+                  </div>
+                </div>
+
+                <div class="kanban-col" id="kanban-col-review">
+                  <div class="kanban-col-header">
+                    <span>3. Credit Evaluation</span>
+                    <span class="badge badge-purple">1</span>
+                  </div>
+                  <div class="kanban-card" id="card-3" draggable="true" data-value="85000">
+                    <div style="font-weight: 700; font-size: 0.9rem;">Nordic Industrial AG</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">$85,000 • Exposure Passed</div>
+                  </div>
+                </div>
+
+                <div class="kanban-col" id="kanban-col-won">
+                  <div class="kanban-col-header">
+                    <span>4. Closed Won</span>
+                    <span class="badge badge-success" id="pipeline-won-total">$0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Payroll Panel -->
+          <div class="module-panel" id="module-payroll">
+            <div class="sandbox-card">
+              <div class="sandbox-header">
+                <div class="sandbox-title-wrap">
+                  <h3 style="font-size: 1.6rem;">FM-09 Global Payroll — Sandboxed Calculation Trace</h3>
+                  <p style="color: var(--text-muted); font-size: 1.05rem;">Every single calculation is stored with a JSON audit trace, making disputes a 1-screen answer.</p>
+                </div>
+                <span class="sandbox-badge">EXPLAINABLE ENGINE</span>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 36px;">
+                <div style="display: flex; flex-direction: column; gap: 18px;">
+                  <div class="form-group">
+                    <label class="form-label">Base Monthly Salary ($)</label>
+                    <input type="number" id="payroll-basic-input" class="form-input font-mono" value="8000">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Housing Allowance (HRA) ($)</label>
+                    <input type="number" id="payroll-hra-input" class="form-input font-mono" value="2500">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Payable Days (out of 30)</label>
+                    <input type="number" id="payroll-days-input" class="form-input font-mono" value="30" max="30" min="1">
+                  </div>
+                  <div style="background: var(--bg-card); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-medium);">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 8px;">
+                      <span>Gross Earnings:</span>
+                      <strong id="payroll-gross-total" class="font-mono" style="color: var(--accent-cyan); font-size: 1.15rem;">$10,500.00</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 1.05rem;">
+                      <span>Net Disbursable Pay:</span>
+                      <strong id="payroll-net-total" class="font-mono" style="color: var(--accent-emerald); font-size: 1.35rem;">$8,700.00</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase;">
+                    Step-by-Step Explainability Trace (calculation_trace)
+                  </div>
+                  <div class="trace-step-list" id="payroll-trace-steps">
+                    <!-- Populated by JS -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Multi-Tenancy & RLS Panel -->
+          <div class="module-panel" id="module-tenancy">
+            <div class="sandbox-card">
+              <div class="sandbox-header">
+                <div class="sandbox-title-wrap">
+                  <h3 style="font-size: 1.6rem;">FM-01 & ADR-002 PostgreSQL Row-Level Security (RLS) Simulator</h3>
+                  <p style="color: var(--text-muted); font-size: 1.05rem;">Kernel-enforced data boundary: <code>SELECT set_config('app.tenant_id', $1, true)</code></p>
+                </div>
+                <span class="sandbox-badge">ZERO DATA LEAKAGE</span>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="form-group">
+                  <label class="form-label">Simulate Active Tenant Context (from JWT Claims):</label>
+                  <select id="rls-tenant-select" class="form-select font-mono">
+                    <option value="tenant-alpha">Tenant Alpha: Acme Global Holdings (UUID: a04e5781-...)</option>
+                    <option value="tenant-beta">Tenant Beta: OmniCorp Logistics (UUID: f99c2234-...)</option>
+                  </select>
+                </div>
+
+                <div class="code-block" id="rls-sql-output">
+                  <!-- Populated by JS -->
+                </div>
+
+                <div class="data-table-wrapper">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Row ID</th>
+                        <th>Tenant Context</th>
+                        <th>Invoice No</th>
+                        <th>Company Scope</th>
+                        <th>Total Amount</th>
+                        <th>RLS Enforcement</th>
+                      </tr>
+                    </thead>
+                    <tbody id="rls-rows-output">
+                      <!-- Populated by JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive C4 Container Architecture & ADR Explorer Section -->
+  <section id="architecture" class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">System Architecture & Microservices</span>
+        <h2>C4 Level 2 Container Diagram & <span class="gradient-text">ADR Library</span></h2>
+        <p class="section-subtitle">
+          Click any microservice node below to inspect its schema isolation, published/consumed Kafka events, and scaling profiles.
+        </p>
+      </div>
+
+      <div class="c4-diagram-container">
+        <div class="c4-diagram-header">
+          <div>
+            <div style="font-weight: 700; font-size: 1.2rem; color: var(--text-main);">Enterprise Topology Container Map</div>
+            <div style="font-size: 0.92rem; color: var(--text-muted); margin-top: 4px;">Clean Architecture Layers: Presentation ➔ Application ➔ Domain (Zero Infra Leakage)</div>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <span class="badge badge-info">KUBERNETES EKS 1.30+</span>
+            <span class="badge badge-purple">KAFKA MSK 3.7+</span>
+            <span class="badge badge-success">POSTGRESQL 16 RLS</span>
+          </div>
+        </div>
+
+        <!-- C4 Visual Layers -->
+        <div class="c4-layer-group">
+          <span class="c4-layer-label">1. Edge & Platform Foundation Services</span>
+          <div class="c4-services-grid">
+            <div class="c4-service-node" data-service="iam-service">
+              <div class="c4-node-title">iam-service</div>
+              <div class="c4-node-tech">Argon2id / JWKS / Redis</div>
+            </div>
+            <div class="c4-service-node" data-service="tenancy-service">
+              <div class="c4-node-title">tenancy-service</div>
+              <div class="c4-node-tech">RLS Routing / Multi-Org</div>
+            </div>
+            <div class="c4-service-node" data-service="workflow-service">
+              <div class="c4-node-title">workflow-service</div>
+              <div class="c4-node-tech">Temporal Durable Engine</div>
+            </div>
+            <div class="c4-service-node" data-service="ai-service">
+              <div class="c4-node-title">ai-service</div>
+              <div class="c4-node-tech">LangGraph / pgvector</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="c4-layer-group">
+          <span class="c4-layer-label">2. Core Domain Microservices (Autonomous Databases)</span>
+          <div class="c4-services-grid">
+            <div class="c4-service-node active" data-service="accounting-service">
+              <div class="c4-node-title">accounting-service</div>
+              <div class="c4-node-tech">Append-Only GL / CQRS</div>
+            </div>
+            <div class="c4-service-node" data-service="inventory-service">
+              <div class="c4-node-title">inventory-service</div>
+              <div class="c4-node-tech">FIFO Layers / Row-Locking</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Inspector Drawer -->
+        <div class="service-inspector-drawer" id="service-inspector-drawer">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- ADR Library -->
+      <div style="margin-top: 80px;">
+        <div style="margin-bottom: 32px;">
+          <h3 style="font-size: 1.65rem;">Architecture Decision Records (ADR-001 to ADR-014)</h3>
+          <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 6px;">Every technical decision is recorded with context, rationale, and consequences.</p>
+        </div>
+        <div class="adr-grid" id="adr-grid-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Distributed Transaction & Temporal Saga Simulator Section -->
+  <section id="saga-simulator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ADR-007 Distributed Consistency</span>
+        <h2>Temporal Saga <span class="gradient-text">Resilience Simulator</span></h2>
+        <p class="section-subtitle">
+          Watch the Order-to-Cash saga execute in real-time. Test how the system gracefully compensates in reverse if an accounting period lock or inventory shortage is encountered.
+        </p>
+      </div>
+
+      <div class="saga-simulator-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+          <div>
+            <div style="font-weight: 700; font-size: 1.2rem; color: var(--text-main);">Order-to-Cash (O2C) Temporal Workflow</div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 4px;">Saga ID: <code>wf-o2c-2026-9041</code> • Max Retry: 5 Attempts</div>
+          </div>
+          <div id="saga-status-badge" class="badge badge-info" style="padding: 6px 16px;">READY</div>
+        </div>
+
+        <!-- Timeline Steps -->
+        <div class="saga-flow-timeline">
+          <div class="saga-step-card" id="saga-step-0">
+            <div class="saga-step-header">
+              <span class="font-mono">Step 1: Inventory</span>
+              <span class="badge badge-info">WAITING</span>
+            </div>
+            <div class="saga-step-action">Reserve Stock</div>
+            <div class="saga-compensation-action">Compensate: Release Reservation</div>
+          </div>
+
+          <div class="saga-step-card" id="saga-step-1">
+            <div class="saga-step-header">
+              <span class="font-mono">Step 2: Inventory</span>
+              <span class="badge badge-info">WAITING</span>
+            </div>
+            <div class="saga-step-action">Issue Goods</div>
+            <div class="saga-compensation-action">Compensate: Reverse Goods Issue</div>
+          </div>
+
+          <div class="saga-step-card" id="saga-step-2">
+            <div class="saga-step-header">
+              <span class="font-mono">Step 3: Sales</span>
+              <span class="badge badge-info">WAITING</span>
+            </div>
+            <div class="saga-step-action">Generate Invoice</div>
+            <div class="saga-compensation-action">Compensate: Issue Credit Note</div>
+          </div>
+
+          <div class="saga-step-card" id="saga-step-3">
+            <div class="saga-step-header">
+              <span class="font-mono">Step 4: Accounting</span>
+              <span class="badge badge-info">WAITING</span>
+            </div>
+            <div class="saga-step-action">Post GL Journal</div>
+            <div class="saga-compensation-action">Compensate: Post Reversing Journal</div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+          <button id="saga-btn-happy" class="btn btn-primary">
+            <span>▶ Simulate Happy Path (Success)</span>
+          </button>
+          <button id="saga-btn-shortage" class="btn btn-secondary">
+            <span>⚠️ Simulate Stock Shortage</span>
+          </button>
+          <button id="saga-btn-compensate" class="btn btn-secondary" style="border-color: rgba(244, 63, 94, 0.4); color: #fb7185;">
+            <span>⚡ Simulate Ledger Fault (Trigger Rollback)</span>
+          </button>
+        </div>
+
+        <!-- Outbox Stream Feed -->
+        <div>
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; margin-bottom: 10px;">
+            Live Transactional Outbox Event Bus Stream (Kafka)
+          </div>
+          <div class="event-stream-box" id="saga-event-stream">
+            <div class="event-stream-row">
+              <span>[Ready] Awaiting Temporal activity dispatch...</span>
+              <span class="badge badge-info" style="font-size: 0.7rem;">IDLE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise AI Tier Section (ADR-014) -->
+  <section id="ai-tier" class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ADR-014 Isolated AI Tier</span>
+        <h2>Autonomous Financial Auditor & <span class="gradient-text">Safe Copilot</span></h2>
+        <p class="section-subtitle">
+          AI operates under the requesting user's OAuth token with pre-filtered pgvector search. AI drafts proposals; a human approves. Zero autonomous posting.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+        <div class="sandbox-card">
+          <div class="sandbox-header">
+            <div class="sandbox-title-wrap">
+              <h3 style="font-size: 1.5rem;">Enterprise AI Prompt Studio</h3>
+              <p style="color: var(--text-muted);">Try sample financial queries with explainable evidence verification.</p>
+            </div>
+            <span class="badge badge-purple" style="padding: 6px 14px;">LANGGRAPH 3.12</span>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <button class="btn btn-secondary btn-sm ai-prompt-chip" data-prompt-key="marketing">Why did Marketing spend spike in Q3?</button>
+            <button class="btn btn-secondary btn-sm ai-prompt-chip" data-prompt-key="ocr">Draft OCR vendor bill for invoice #INV-8892</button>
+            <button class="btn btn-secondary btn-sm ai-prompt-chip" data-prompt-key="cashflow">Simulate 90-day cash flow forecast</button>
+          </div>
+
+          <div class="form-group" style="margin-top: 14px;">
+            <div style="display: flex; gap: 10px;">
+              <input type="text" id="ai-prompt-input" class="form-input" placeholder="Ask financial or operational question..." value="Why did Marketing spend spike in Q3?">
+              <button id="ai-send-btn" class="btn btn-primary">Ask</button>
+            </div>
+          </div>
+
+          <!-- Response Container -->
+          <div id="ai-response-box" style="background: var(--bg-secondary); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 22px;">
+            <!-- Populated by JS -->
+          </div>
+
+          <div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; margin-bottom: 8px;">Data Lineage & Audit Graph</div>
+            <div id="ai-lineage-tree" style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <div style="position: relative;">
+          <img src="assets/images/ai-assistant.jpg" alt="NEXUS AI Copilot Interface" style="width: 100%; border-radius: var(--radius-xl); border: 1px solid var(--border-bright); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), var(--shadow-glow-cyan);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitive Comparison Matrix (NetSuite / SAP / Legacy vs NEXUS) -->
+  <section id="comparison">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Architectural Benchmark</span>
+        <h2>Why NEXUS Outperforms <span class="gradient-text">Legacy ERP Monoliths</span></h2>
+        <p class="section-subtitle">
+          See why modern enterprise architects and finance leaders choose NEXUS over rigid monolithic legacy platforms.
+        </p>
+      </div>
+
+      <div class="data-table-wrapper" style="border-radius: var(--radius-xl);">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Evaluation Dimension</th>
+              <th class="highlight-col">NEXUS Enterprise ERP</th>
+              <th>Oracle NetSuite / SAP S/4HANA</th>
+              <th>Traditional On-Prem ERP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Architecture Model</strong></td>
+              <td class="highlight-col"><strong style="color: var(--accent-cyan);">16 Decoupled Microservices + Clean DDD</strong></td>
+              <td>Monolithic Suite (Slow Module Deployments)</td>
+              <td>Single Monolithic Binary & Giant DB</td>
+            </tr>
+            <tr>
+              <td><strong>Financial Ledger</strong></td>
+              <td class="highlight-col"><strong style="color: var(--accent-emerald);">Append-Only & Gapless Immutability (BR-03.02)</strong></td>
+              <td>Periodic Batch Locks & Editable Tables</td>
+              <td>Manual Corrections & Unaudited Edits</td>
+            </tr>
+            <tr>
+              <td><strong>Distributed Sagas</strong></td>
+              <td class="highlight-col"><strong style="color: var(--accent-cyan);">Temporal Durable Sagas with Auto-Rollback</strong></td>
+              <td>Risky Synchronous 2PC / Manual Reversals</td>
+              <td>No Sagas (Manual Intervention on Crash)</td>
+            </tr>
+            <tr>
+              <td><strong>Multi-Tenancy Isolation</strong></td>
+              <td class="highlight-col"><strong style="color: var(--accent-emerald);">Kernel-Forced PostgreSQL Row-Level Security</strong></td>
+              <td>Application-Level WHERE Clauses (Vulnerable)</td>
+              <td>Separate Expensive Virtual Machines</td>
+            </tr>
+            <tr>
+              <td><strong>AI Copilot Integration</strong></td>
+              <td class="highlight-col"><strong style="color: var(--accent-cyan);">Permission-Scoped LangGraph + pgvector (Zero Auto-Post)</strong></td>
+              <td>Add-On Chatbot (No Deep Domain Integration)</td>
+              <td>Non-Existent / Unsupported</td>
+            </tr>
+            <tr>
+              <td><strong>Schema Upgrades</strong></td>
+              <td class="highlight-col"><strong style="color: var(--accent-emerald);">Zero-Downtime Expand/Contract Migrations</strong></td>
+              <td>Multi-Hour Weekend Maintenance Windows</td>
+              <td>Multi-Month Painful Upgrade Cycles</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive ROI & TCO Calculator Section -->
+  <section id="roi-calculator" class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Executive Value Proposition</span>
+        <h2>Enterprise ROI & <span class="gradient-text">TCO Calculator</span></h2>
+        <p class="section-subtitle">
+          Adjust the parameters to estimate your operational cost savings, touchless processing velocity, and month-end close acceleration.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+        <div class="sandbox-card">
+          <div class="range-slider-group">
+            <div class="range-slider-header">
+              <span class="range-slider-label">Number of Legal Entities / Companies:</span>
+              <span id="roi-entities-val" class="range-slider-value">4</span>
+            </div>
+            <input type="range" id="roi-entities-slider" class="range-slider" min="1" max="50" value="4">
+          </div>
+
+          <div class="range-slider-group">
+            <div class="range-slider-header">
+              <span class="range-slider-label">Monthly Transaction Volume:</span>
+              <span id="roi-transactions-val" class="range-slider-value">75,000</span>
+            </div>
+            <input type="range" id="roi-transactions-slider" class="range-slider" min="5000" max="500000" step="5000" value="75000">
+          </div>
+
+          <div class="range-slider-group">
+            <div class="range-slider-header">
+              <span class="range-slider-label">Total Employee Headcount:</span>
+              <span id="roi-headcount-val" class="range-slider-value">1,200</span>
+            </div>
+            <input type="range" id="roi-headcount-slider" class="range-slider" min="50" max="10000" step="50" value="1200">
+          </div>
+
+          <div class="range-slider-group">
+            <div class="range-slider-header">
+              <span class="range-slider-label">Current Annual ERP Licensing & Infra Cost:</span>
+              <span id="roi-legacy-val" class="range-slider-value">$350,000</span>
+            </div>
+            <input type="range" id="roi-legacy-slider" class="range-slider" min="50000" max="1500000" step="25000" value="350000">
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <div class="glass-panel" style="padding: 32px; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-size: 0.9rem; color: var(--text-muted);">Estimated Annual Savings</div>
+            <div id="roi-annual-savings" class="font-mono" style="font-size: 2.4rem; font-weight: 800; color: var(--accent-emerald); margin: 10px 0;">$589,500</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim);">45% Infra + 85% Touchless AP</div>
+          </div>
+
+          <div class="glass-panel" style="padding: 32px; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-size: 0.9rem; color: var(--text-muted);">Month-End Close Time</div>
+            <div id="roi-close-days" class="font-mono" style="font-size: 2rem; font-weight: 800; color: var(--accent-cyan); margin: 10px 0;">2 Days</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim);">Accelerated from 14 days</div>
+          </div>
+
+          <div class="glass-panel" style="padding: 32px; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-size: 0.9rem; color: var(--text-muted);">Touchless 3-Way Match Rate</div>
+            <div id="roi-touchless-rate" class="font-mono" style="font-size: 2rem; font-weight: 800; color: var(--accent-indigo); margin: 10px 0;">88.5%</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim);">Automated variance resolution</div>
+          </div>
+
+          <div class="glass-panel" style="padding: 32px; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-size: 0.9rem; color: var(--text-muted);">Estimated Payback Period</div>
+            <div id="roi-payback-period" class="font-mono" style="font-size: 2rem; font-weight: 800; color: var(--accent-amber); margin: 10px 0;">3.8 Months</div>
+            <div style="font-size: 0.85rem; color: var(--text-dim);">Rapid Phase 0 migration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials & Enterprise Case Studies -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Proven Enterprise Impact</span>
+        <h2>Trusted by Global <span class="gradient-text">Finance & Tech Leaders</span></h2>
+        <p class="section-subtitle">
+          Discover how enterprises eliminate data leakage, accelerate audits, and scale across multi-currency jurisdictions.
+        </p>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-metric">82% Faster Close</div>
+          <p class="testimonial-quote">
+            "Switching from our legacy ERP to NEXUS reduced our global consolidation and month-end close from 14 days down to 2.5 days. The immutable append-only ledger made our Big 4 audit completely frictionless."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">EM</div>
+            <div>
+              <div style="font-weight: 700; color: var(--text-main);">Elena Martinez</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">VP of Finance, Global Retail Holdings</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-metric">0 Data Leakage</div>
+          <p class="testimonial-quote">
+            "PostgreSQL Row-Level Security enforced at the database layer gave our CISO and compliance team 100% confidence. We operate across 8 sovereign branches with zero risk of cross-entity leaks."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DK</div>
+            <div>
+              <div style="font-weight: 700; color: var(--text-main);">David Kroll</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Chief Technology Officer, OmniLogistics Group</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-metric">88.5% Touchless AP</div>
+          <p class="testimonial-quote">
+            "The automated 3-way match engine and Temporal sagas eliminated nearly all manual data entry in our supply chain. When supplier bills don't match, the exception queue routes them with exact variance diffs."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SL</div>
+            <div>
+              <div style="font-weight: 700; color: var(--text-main);">Sarah Lindqvist</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Director of Operations, Nordic Manufacturing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive FAQ Accordion Section -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Frequently Asked Questions</span>
+        <h2>Everything You Need <span class="gradient-text">to Know</span></h2>
+        <p class="section-subtitle">
+          Answers to common technical, financial, and deployment questions regarding NEXUS Enterprise ERP.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item open">
+          <div class="faq-question">
+            <span>How does PostgreSQL Row-Level Security guarantee zero cross-tenant data leakage?</span>
+            <div class="faq-toggle-icon">+</div>
+          </div>
+          <div class="faq-answer">
+            NEXUS enforces RLS at the PostgreSQL database kernel level using <code>set_config('app.tenant_id', $1, true)</code> inside each transaction. The <code>true</code> parameter ensures the context is strictly local to the transaction and automatically purged on commit, making cross-tenant data leakage structurally impossible even with shared connection pools.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does the General Ledger maintain strict audit immutability?</span>
+            <div class="faq-toggle-icon">+</div>
+          </div>
+          <div class="faq-answer">
+            Under business rule BR-03.02, posted journal entries cannot be updated or deleted by any user or database administrator. Corrections are recorded as explicit reversing journal entries with gapless sequence numbers. A PostgreSQL trigger blocks any direct mutation of posted records.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What happens if a service crashes during an Order-to-Cash transaction?</span>
+            <div class="faq-toggle-icon">+</div>
+          </div>
+          <div class="faq-answer">
+            Cross-service transactions are orchestrated by Temporal durable sagas (ADR-007). If a step fails (such as an inventory shortage or locked fiscal period), Temporal automatically executes the compensating activities in reverse order (e.g., releasing stock reservations and issuing credit notes), restoring the ledger and stock to a consistent baseline state.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does the AI Copilot prevent prompt injection and unauthorized financial postings?</span>
+            <div class="faq-toggle-icon">+</div>
+          </div>
+          <div class="faq-answer">
+            Per ADR-014, the AI service operates as an isolated tier under the requesting user’s OAuth token exchange. Vector searches in pgvector are pre-filtered by tenant and scope. Furthermore, the AI is architected strictly to generate proposals for human approval—it is structurally prevented from posting financial entries autonomously.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can we migrate from pooled shared-schema to dedicated VPC clusters?</span>
+            <div class="faq-toggle-icon">+</div>
+          </div>
+          <div class="faq-answer">
+            Yes. ADR-002 decouples domain and application logic from physical isolation tiers. Promoting a tenant from pooled shared-schema to a dedicated schema or dedicated AWS EKS/RDS cluster is a data migration and tenancy registry update with zero application code changes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deployment Tiers Section (ADR-002) -->
+  <section id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ADR-002 Multi-Tenancy Routing</span>
+        <h2>Flexible Enterprise <span class="gradient-text">Deployment Tiers</span></h2>
+        <p class="section-subtitle">
+          Start on pooled infrastructure and seamlessly promote to dedicated schemas or dedicated VPC clusters with zero code changes.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px;">
+        <!-- Tier 1: Pooled -->
+        <div class="glass-panel" style="padding: 40px; display: flex; flex-direction: column; gap: 24px;">
+          <div>
+            <span class="badge badge-info">TIER 1: POOLED SHARED-SCHEMA</span>
+            <h3 style="margin-top: 14px; font-size: 1.6rem;">Growth Suite</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">Cost-efficient SaaS tenancy with kernel-enforced PostgreSQL Row-Level Security.</p>
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
+            <li>✓ Multi-Company & Multi-Branch Hierarchy</li>
+            <li>✓ Core 9-Module Business Suite</li>
+            <li>✓ Shared Kafka & Redis Connection Pools</li>
+            <li>✓ Automated Nightly GL Reconciliation</li>
+          </ul>
+          <button class="btn btn-secondary auth-signup-btn" style="margin-top: auto;">Start Growth Trial</button>
+        </div>
+
+        <!-- Tier 2: Dedicated Schema -->
+        <div class="glass-panel glass-panel-glow" style="padding: 40px; display: flex; flex-direction: column; gap: 24px; border-color: var(--accent-cyan); background: var(--bg-card-hover);">
+          <div>
+            <span class="badge badge-success">TIER 2: DEDICATED SCHEMA (POPULAR)</span>
+            <h3 style="margin-top: 14px; font-size: 1.6rem;">Enterprise Scale</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">Dedicated database schema per tenant with custom fiscal calendar extensions.</p>
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-main);">
+            <li>✓ <strong>Everything in Growth +</strong></li>
+            <li>✓ Dedicated Postgres Schema Isolation</li>
+            <li>✓ Temporal Workflow Worker Autoscaling</li>
+            <li>✓ LangGraph AI Copilot & OCR Engine</li>
+            <li>✓ 99.95% GL Posting SLA Commitment</li>
+          </ul>
+          <button class="btn btn-primary auth-signup-btn" style="margin-top: auto;">Start Enterprise Sandbox</button>
+        </div>
+
+        <!-- Tier 3: Dedicated Cluster -->
+        <div class="glass-panel" style="padding: 40px; display: flex; flex-direction: column; gap: 24px;">
+          <div>
+            <span class="badge badge-purple">TIER 3: DEDICATED CLUSTER / VPC</span>
+            <h3 style="margin-top: 14px; font-size: 1.6rem;">Regulated Global</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">Isolated AWS EKS + RDS cluster deployed in your specific sovereignty data region.</p>
+          </div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
+            <li>✓ Dedicated AWS EKS + Multi-AZ RDS</li>
+            <li>✓ Custom KMS Envelope Encryption Keys</li>
+            <li>✓ GDPR Crypto-Shredding & Custom SAML IdP</li>
+            <li>✓ 24/7 Dedicated Principal Architect Support</li>
+          </ul>
+          <button class="btn btn-secondary open-demo-btn" style="margin-top: auto;">Contact Solutions Architect</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <span>NEXUS<span style="color: var(--accent-cyan);">.ERP</span></span>
+          </div>
+          <p class="footer-description">
+            The next-generation distributed enterprise ERP platform. Right-sized domain-driven microservices, single ledger of truth, and durable Temporal sagas.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Architecture</div>
+          <ul class="footer-links">
+            <li><a href="#architecture" class="footer-link">C4 Container Map</a></li>
+            <li><a href="#architecture" class="footer-link">ADR Decision Records</a></li>
+            <li><a href="#saga-simulator" class="footer-link">Temporal Sagas</a></li>
+            <li><a href="#modules" class="footer-link">Row-Level Security</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Business Scope</div>
+          <ul class="footer-links">
+            <li><a href="#modules" class="footer-link">FM-03 General Ledger</a></li>
+            <li><a href="#modules" class="footer-link">FM-04 Stock Valuation</a></li>
+            <li><a href="#modules" class="footer-link">FM-05 3-Way Match</a></li>
+            <li><a href="#modules" class="footer-link">FM-09 Global Payroll</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Compliance</div>
+          <ul class="footer-links">
+            <li><span class="footer-link">SOC2 Type II Certified</span></li>
+            <li><span class="footer-link">ISO 27001 Certified</span></li>
+            <li><span class="footer-link">GDPR Crypto-Shredding</span></li>
+            <li><span class="footer-link">IFRS & GAAP Validated</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Account & Access</div>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link auth-signin-btn">Sign In to Cockpit</a></li>
+            <li><a href="#" class="footer-link auth-signup-btn">Start Free Trial</a></li>
+            <li><a href="#" class="footer-link open-demo-btn">Book Architecture Review</a></li>
+            <li><a href="#roi-calculator" class="footer-link">TCO Calculator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 NEXUS Enterprise ERP Platform. Designed according to Architectural Blueprint Level 0 & TDD-001.</div>
+        <div style="display: flex; gap: 18px;">
+          <span>Node 22 LTS</span>
+          <span>•</span>
+          <span>NestJS 11</span>
+          <span>•</span>
+          <span>Next.js 15</span>
+          <span>•</span>
+          <span>PostgreSQL 16</span>
+          <span>•</span>
+          <span>Temporal 1.24</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sign In Modal -->
+  <div class="modal-backdrop" id="signin-modal">
+    <div class="modal-dialog" style="max-width: 520px;">
+      <div class="modal-header">
+        <div>
+          <div style="font-weight: 800; font-size: 1.35rem; color: var(--text-main);">Sign In to NEXUS Cockpit</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Enter your enterprise credentials or corporate SSO</div>
+        </div>
+        <button class="modal-close-btn" id="signin-modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- SSO Providers -->
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+          <button class="btn btn-secondary sso-btn" data-provider="Okta SSO" style="width: 100%; justify-content: flex-start; gap: 14px;">
+            <span style="font-weight: 700; color: #38bdf8;">Okta</span>
+            <span>Sign In with Okta SSO</span>
+          </button>
+          <button class="btn btn-secondary sso-btn" data-provider="Microsoft Azure AD" style="width: 100%; justify-content: flex-start; gap: 14px;">
+            <span style="font-weight: 700; color: #a855f7;">Azure</span>
+            <span>Sign In with Microsoft Entra / Azure AD</span>
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+          <div style="flex: 1; height: 1px; background: var(--border-subtle);"></div>
+          <span style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Or with work email</span>
+          <div style="flex: 1; height: 1px; background: var(--border-subtle);"></div>
+        </div>
+
+        <form id="signin-form">
+          <div class="form-group">
+            <label class="form-label">Tenant Workspace Identifier</label>
+            <input type="text" id="signin-tenant" class="form-input font-mono" placeholder="acme-global.nexus-erp.com" value="acme-global">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Corporate Email Address</label>
+            <input type="email" id="signin-email" class="form-input" placeholder="alex@enterprise.com" value="alex.morgan@acme-global.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-input" value="••••••••••••" required>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; margin-bottom: 16px;">
+            <label style="display: flex; align-items: center; gap: 8px; color: var(--text-muted); cursor: pointer;">
+              <input type="checkbox" checked> Remember this device
+            </label>
+            <a href="#" style="color: var(--accent-cyan);">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span>Sign In to ERP Cockpit</span>
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: var(--text-muted);">
+          Don't have an enterprise workspace? <a href="#" id="switch-to-signup" style="color: var(--accent-cyan); font-weight: 600;">Start a free trial</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up / Free Trial Modal -->
+  <div class="modal-backdrop" id="signup-modal">
+    <div class="modal-dialog" style="max-width: 580px;">
+      <div class="modal-header">
+        <div>
+          <div style="font-weight: 800; font-size: 1.35rem; color: var(--text-main);">Start 14-Day Enterprise Sandbox</div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Provision a live multi-entity ERP sandbox in seconds</div>
+        </div>
+        <button class="modal-close-btn" id="signup-modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="signup-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="e.g. Jordan Lee" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Work Email</label>
+              <input type="email" class="form-input" placeholder="jordan@company.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Company / Legal Entity Name</label>
+            <input type="text" id="signup-company" class="form-input" placeholder="e.g. Acme Industrial Group" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label class="form-label">Desired Deployment Tier</label>
+              <select id="signup-tier" class="form-select">
+                <option value="Tier 2: Dedicated Schema">Tier 2: Dedicated Schema (Recommended)</option>
+                <option value="Tier 1: Pooled Shared-Schema">Tier 1: Pooled Shared-Schema</option>
+                <option value="Tier 3: Dedicated VPC / Sovereign Cluster">Tier 3: Dedicated Sovereign VPC</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Initial Legal Entities</label>
+              <select class="form-select">
+                <option>1-3 Entities (Multi-Currency)</option>
+                <option>4-10 Entities</option>
+                <option>10+ Global Subsidiaries</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.25); border-radius: var(--radius-md); padding: 14px; margin-bottom: 20px; font-size: 0.85rem; color: var(--text-muted);">
+            ✨ Includes instant pre-loaded test data for General Ledger, Inventory FIFO, and 3-Way Match. No credit card required.
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            <span>Launch Instant ERP Sandbox</span>
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: var(--text-muted);">
+          Already have an active tenant? <a href="#" id="switch-to-signin" style="color: var(--accent-cyan); font-weight: 600;">Sign in here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Command Palette Modal (Ctrl+K) -->
+  <div class="modal-backdrop" id="cmd-palette-modal">
+    <div class="modal-dialog" style="max-width: 680px; padding: 0;">
+      <div style="padding: 20px 24px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; gap: 14px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="cmd-search-input" placeholder="Search 9 Modules, 14 ADRs, 16 Microservices, or Interactive Demos..." style="width: 100%; background: transparent; border: none; outline: none; color: var(--text-main); font-size: 1.1rem; font-family: var(--font-sans);">
+        <button class="modal-close-btn" aria-label="Close">✕</button>
+      </div>
+      <div id="cmd-results-list" style="max-height: 460px; overflow-y: auto; padding: 12px;">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo Booking / Architecture Consultation Modal -->
+  <div class="modal-backdrop" id="demo-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div style="font-weight: 700; font-size: 1.3rem; color: var(--text-main);">Schedule Architecture Deep Dive</div>
+        <button class="modal-close-btn" id="demo-modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="demo-booking-form">
+          <div class="form-group">
+            <label class="form-label">Your Full Name</label>
+            <input type="text" id="lead-name" class="form-input" placeholder="e.g. Alex Morgan" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Corporate Email</label>
+            <input type="email" id="lead-email" class="form-input" placeholder="alex@enterprise.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Role / Title</label>
+            <select id="lead-role" class="form-select">
+              <option value="Chief Technology Officer">Chief Technology Officer (CTO)</option>
+              <option value="Chief Financial Officer">Chief Financial Officer (CFO)</option>
+              <option value="Chief Software Architect">Chief Enterprise Architect</option>
+              <option value="VP of Operations">VP of Operations / Supply Chain</option>
+              <option value="Engineering Lead">Engineering Lead / Product Owner</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Estimated Legal Entities & Headcount</label>
+            <input type="text" class="form-input" placeholder="e.g. 5 Entities, 2,500 Headcount">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 12px;">
+            <span>Confirm Architecture Consultation</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Generic ADR / Detail Modal -->
+  <div class="modal-backdrop" id="generic-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div id="generic-modal-title" style="font-weight: 700; font-size: 1.25rem; color: var(--text-main);">Detail</div>
+        <button class="modal-close-btn" id="generic-modal-close" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="generic-modal-body">
+        <!-- Content injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Modules -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/command-palette.js"></script>
+  <script src="js/architecture-viz.js"></script>
+  <script src="js/saga-simulator.js"></script>
+  <script src="js/erp-modules-demo.js"></script>
+  <script src="js/ai-copilot-demo.js"></script>
+  <script src="js/roi-calculator.js"></script>
+  <script src="js/lead-capture.js"></script>
+  <script src="js/auth-modal.js"></script>
+  <script src="js/alive-animations.js"></script>
+</body>
+</html>

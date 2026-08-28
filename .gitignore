@@ -1,0 +1,11 @@
+# Operating System & IDE Files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Node dependencies (if any)
+node_modules/
+dist/
+build/
